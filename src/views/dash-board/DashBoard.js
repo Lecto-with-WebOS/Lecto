@@ -1,12 +1,13 @@
 import kind from '@enact/core/kind';
+import styles from "./DashBoard.module.css";
 
 const DashBoard = kind({
 	name: 'DashBoard',
 
 	render: (props) => (
-		<RootDiv>
+		<div className={styles.root}>
 
-		</RootDiv>
+		</div>
 	)
 });
 
