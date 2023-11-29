@@ -33,6 +33,7 @@
 		"@enact/agate": "^2.0.8",
 		"@enact/core": "^4.7.6",
 		"@enact/i18n": "^4.7.6",
+		"@enact/moonstone": "^4.5.4",
 		"@enact/sandstone": "^2.7.10",
 		"@enact/spotlight": "^4.7.6",
 		"@enact/ui": "^4.7.6",
