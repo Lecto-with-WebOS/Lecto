@@ -1,10 +1,7 @@
-import kind from "@enact/core/kind";
 import ThemeDecorator from "@enact/sandstone/ThemeDecorator";
-import Panels from "@enact/sandstone/Panels";
 
 import Main from "../views/MainPanel";
 import Routable, { Route } from "@enact/ui/Routable";
-import css from "./App.module.less";
 import Table from "../views/Table";
 import Board from "../views/Board";
 import { useCallback, useState } from "react";
