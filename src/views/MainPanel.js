@@ -1,16 +1,10 @@
-import Button from '@enact/sandstone/Button';
-import kind from '@enact/core/kind';
-import {Panel, Header} from '@enact/sandstone/Panels';
+import { Link } from "@enact/ui/Routable";
 
-const MainPanel = kind({
-	name: 'MainPanel',
+const Main = () => (
+  <div>
+    <Link path="/board">board</Link>
+    <Link path="/table">table</Link>
+  </div>
+);
 
-	render: (props) => (
-		<Panel {...props}>
-			<Header title="Hello world!" />
-			<Button>Click me</Button>
-		</Panel>
-	)
-});
-
-export default MainPanel;
+export default Main;
