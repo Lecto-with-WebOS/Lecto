@@ -34,7 +34,7 @@ const LectureProgressBar = kind({
           borderColor: "green"
         }}
       >
-        <text
+        <span
           style={{
             fontsize: "150px",
             border: "2px solid",
@@ -42,8 +42,8 @@ const LectureProgressBar = kind({
           }}
         >
           {start}
-        </text>
-        <text
+        </span>
+        <span
           style={{
             fontsize: "150px",
             border: "2px solid",
@@ -51,7 +51,7 @@ const LectureProgressBar = kind({
           }}
         >
           {end}
-        </text>
+        </span>
       </div>
     </div>
   )
