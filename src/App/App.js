@@ -7,7 +7,7 @@ import Routable, { Route } from "@enact/ui/Routable";
 import css from "./App.module.less";
 import Table from "../views/Table";
 import Board from "../views/Board";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 // const App = kind({
 //   name: "App",
@@ -43,6 +43,28 @@ const App = (props) => {
   const [path, nav] = useState("main");
   // if onNavigate is called with a new path, update the state
   const handleNavigate = useCallback((ev) => nav(ev.path), [nav]);
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await fetch("./data.json");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const jsonData = await response.json();
+
+        // 로컬 스토리지에 데이터 저장
+        window.localStorage.setItem(
+          "tableData",
+          JSON.stringify(jsonData.table)
+        );
+        window.localStorage.setItem("listData", JSON.stringify(jsonData.list));
+
+        console.log("JSON 데이터가 로컬 스토리지에 등록되었습니다.");
+      } catch (error) {
+        console.error("Fetch error:", error);
+      }
+    })();
+  }, []); // 빈 배열을 전달하여 컴포넌트가 처음 마운트될 때만 실행
 
   return (
     <Views {...props} path={path} onNavigate={handleNavigate}>
