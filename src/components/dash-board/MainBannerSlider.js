@@ -23,7 +23,7 @@ const MainBannerSliderWrapper = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
-    }, 10000);
+    }, 3000);
 
     return () => clearInterval(intervalId);
   }, [currentIndex]);
