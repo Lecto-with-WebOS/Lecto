@@ -6,3 +6,9 @@
     display: flex;
     flex-direction: column;
 }
+
+.fixedImage {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+  }
