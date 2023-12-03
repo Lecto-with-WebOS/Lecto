@@ -2,8 +2,25 @@ import styles from './EventContainer.module.css';
 import map_logo from '../../asset/map_logo.png';
 import snowy_icon from '../../asset/snowy_icon.png'
 import clock from '../../asset/clock.png';
+import React, { useState, useEffect } from 'react';
 
 const EventContainer = () => {
+
+    const [dateObject, setDateObject] = useState(new Date());
+
+    useEffect(() => {
+        let timer = setInterval(() => {
+            setDateObject(new Date());
+        }, 1000);
+
+        return function cleanup() {
+            clearInterval(timer);
+        }
+    }, []);
+
+    const zeroPad = (num, places) => String(num).padStart(places, '0');
+
+
     return (
         <div className={styles.eventContainer}>
         <div className={styles.lectureData}>
@@ -14,7 +31,7 @@ const EventContainer = () => {
         <div className={styles.weatherContainer}>
             <div className={styles.weather}>
                 <img src={snowy_icon} alt="weather-icon" />        
-                <h2>24˚</h2>
+                <h1>24˚</h1>
             </div>
             <div className={styles.temperatures}>
                 <span>최고 : </span>
@@ -25,8 +42,8 @@ const EventContainer = () => {
         </div>
         <div className={styles.timeContainer}>
             <img src={clock} alt="Logo"/>
-            <h1 className={styles.nowTime}>15:09</h1>
-            <p>2023/12/03</p>
+            <h1 className={styles.nowTime}>{zeroPad(dateObject.getHours(), 2)}:{zeroPad(dateObject.getMinutes(), 2)}</h1>
+            <p>{dateObject.getFullYear()}/{zeroPad(dateObject.getMonth() + 1, 2)}/{zeroPad(dateObject.getDate(), 2)}</p>
         </div>
     </div>
     );
