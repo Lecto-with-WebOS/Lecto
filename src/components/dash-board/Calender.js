@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import styles from './Calender.module.css';
 
 const Calender = () => {
     const [dateObject, setDateObject] = useState(new Date());
+
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
 
     useEffect(() => {
         let timer = setInterval(() => {
@@ -54,10 +59,19 @@ const Calender = () => {
 
 
     return (
-        <div>
+        <div className={styles.calenderMain}>
+             <div className={styles.monthYear}>{monthNames[dateObject.getMonth()]} {dateObject.getFullYear()}</div>
             <table>
                 <thead>
-                    <tr><th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th></tr>
+                    <tr>
+                        <th>Su</th>
+                        <th>Mo</th>
+                        <th>Tu</th>
+                        <th>We</th>
+                        <th>Th</th>
+                        <th>Fi</th>
+                        <th>Sa</th>
+                    </tr>
                 </thead>
                 <tbody>
                     {createCalendar(dateObject.getFullYear(), dateObject.getMonth() + 1)}

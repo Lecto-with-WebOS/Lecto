@@ -1,7 +1,7 @@
 import styles from './InfomationContainer.module.css';
 import MainBannerSlider from './MainBannerSlider';
 import EventContainer from './EventContainer';
-import Calender from '../Calender';
+import Calender from './Calender';
 
 const InfomationContainer = () => {
     return (
