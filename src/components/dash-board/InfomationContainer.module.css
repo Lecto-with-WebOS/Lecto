@@ -1,6 +1,6 @@
 .mainContainer{
     width: 100%;
-    height: auto;
+    height: 100%;
     margin-top: 60px; /* Header의 높이만큼 여백 설정 (값은 필요에 따라 조절) */
     margin: 0 38px; 
     flex: 1;
@@ -10,9 +10,10 @@
 }
 
 .leftContainer {
-    width: 1179px;
+    width: 70%;
+    min-width: 1179px;
 }
 
 .rightContainer {
-    width: 591px;
+    width: 30%;
 }

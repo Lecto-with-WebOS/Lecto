@@ -1,20 +1,32 @@
-import kind from '@enact/core/kind';
 import styles from './EventContainer.module.css';
 import map_logo from '../../asset/map_logo.png';
+import snowy_icon from '../../asset/snowy_icon.png'
+import clock from '../../asset/clock.png';
 
 const EventContainer = () => {
     return (
         <div className={styles.eventContainer}>
         <div className={styles.lectureData}>
             <img src={map_logo} alt="Logo"/>
-            숭덕경상관 02112 <br/>
-            <br/>(PC실습실)
+            <h3 className={styles.paragraph}>숭덕경상관 02112</h3>
+            <h4>(PC실습실)</h4>
         </div>
-        <div className={styles.time}>
-            {/* 시간 정보를 여기에 적어주세요 */}
+        <div className={styles.weatherContainer}>
+            <div className={styles.weather}>
+                <img src={snowy_icon} alt="weather-icon" />        
+                <h2>24˚</h2>
+            </div>
+            <div className={styles.temperatures}>
+                <span>최고 : </span>
+                <span>8˚</span>
+                <span>최저 : </span>
+                <span>8˚</span>
+            </div>
         </div>
-        <div className={styles.map}>
-            {/* 지도 정보를 여기에 적어주세요 */}
+        <div className={styles.timeContainer}>
+            <img src={clock} alt="Logo"/>
+            <h1 className={styles.nowTime}>15:09</h1>
+            <p>2023/12/03</p>
         </div>
     </div>
     );
