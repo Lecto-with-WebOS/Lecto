@@ -1,13 +1,5 @@
 {
-  "table": [
-    [null, 1, null, null, 2, 3, 4, 4, null, null],
-    [null, 5, 6, 6, null, 3, 7, null, null, null],
-    [null, 1, 8, null, 2, 9, 9, null, null, null],
-    [null, 5, 10, null, null, 11, 11, 12, 12, 12],
-    [null, null, 13, 13, null, null, 7, null, null, null],
-    [14, 15, 15, 15, null, null, null, null, null, null]
-  ],
-  "list": {
+  "detail": {
     "1": {
       "id": 1,
       "title": "전산통계 1",
