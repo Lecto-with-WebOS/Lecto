@@ -1,0 +1,59 @@
+div {
+  color: black;
+}
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  font-family: Pretendard;
+}
+
+.table {
+  display: grid;
+  grid-template-columns: auto repeat(6, 1fr);
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+  padding: 25px 22px;
+  box-sizing: border-box;
+}
+
+.time,
+.subjectCell,
+.header,
+.emptyCell {
+  text-align: center;
+  width: 13.5vw;
+  height: 8vh;
+}
+.subjectCell {
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  word-break: keep-all;
+  font-size: 1rem;
+}
+
+.header {
+  background-color: #2b6590;
+  color: #fff;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.time {
+  background-color: #2b6590;
+  color: #fff;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+}
+
+.emptyCell {
+  background-color: #fff5f5;
+}
