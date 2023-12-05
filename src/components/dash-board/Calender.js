@@ -3,6 +3,7 @@ import styles from './Calender.module.css';
 
 const Calender = () => {
     const [dateObject, setDateObject] = useState(new Date());
+    const [currentDate, setCurrentDate] = useState(new Date());
 
     const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
@@ -30,14 +31,21 @@ const Calender = () => {
         }
 
         while (d.getMonth() === mon) {
-            week.push(<td>{d.getDate()}</td>);
-
-            if (getDay(d) % 7 === 6) {
+            if (d.getDate() === currentDate.getDate() && d.getMonth() === currentDate.getMonth() && d.getFullYear() === currentDate.getFullYear()) {
+                week.push(
+                <td className={styles.today}>
+                    <div className={styles.circle}>{d.getDate()}</div>
+                  </td>);
+              } else {
+                week.push(<td>{d.getDate()}</td>);
+              }
+            
+              if (getDay(d) % 7 === 6) {
                 weeks.push(<tr>{week}</tr>);
                 week = [];
-            }
-
-            d.setDate(d.getDate() + 1);
+              }
+            
+              d.setDate(d.getDate() + 1);
         }
 
         if (getDay(d) !== 0) {
