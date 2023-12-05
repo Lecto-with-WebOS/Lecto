@@ -14,7 +14,7 @@
 
 .monthYear{
     color: #333333;
-    font-size: 48px;
+    font-size: 60px;
     font-family: Inter;
     font-weight: 700;
     word-wrap: break-word
@@ -24,7 +24,7 @@
     width: 100%;
     text-align: center;
     color: #333333;
-    font-size: 24px;
+    font-size: 60px;
     font-family: Inter;
     font-weight: 500;
   }
