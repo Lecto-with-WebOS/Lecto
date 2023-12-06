@@ -38,7 +38,8 @@ const LectureProgressBar = kind({
           style={{
             fontsize: "150px",
             border: "2px solid",
-            borderColor: "brown"
+            borderColor: "brown",
+            color: "black"
           }}
         >
           {start}
@@ -47,7 +48,8 @@ const LectureProgressBar = kind({
           style={{
             fontsize: "150px",
             border: "2px solid",
-            borderColor: "brown"
+            borderColor: "brown",
+            color: "black"
           }}
         >
           {end}
