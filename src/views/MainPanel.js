@@ -11,10 +11,13 @@ import LectureStudyingHorse from "../components/LectureStudyingHorse";
 import LectureSSULOGO from "../components/LectureSSULOGO";
 import LectureFooter from "../components/LectureFooter";
 
-const Main = kind({
-  name: "MainPanel",
 
-  render: () => (
+const Main = () => {
+  const timetable = JSON.parse(window.localStorage.getItem("tableData"));
+  console.log(timetable);
+  console.log(timetable[0]);
+
+  return (
     <div
       style={{
         display: "flex",
@@ -28,7 +31,6 @@ const Main = kind({
           height: "150px"
         }}
       />
-      {/* <div style={{ zIndex: "-1",, width: "1580px", height: "744px"}}><text>123</text></div> */}
       <div
         style={{
           width: "100%",
@@ -72,7 +74,7 @@ const Main = kind({
         yyyy_mm_dd="2023/11/28"
       />
     </div>
-  )
-});
+  );
+};
 
 export default Main;
