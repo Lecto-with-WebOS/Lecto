@@ -15,7 +15,6 @@ const Main = kind({
   name: "MainPanel",
 
   render: () => (
-    
     <div
       style={{
         border: "2px solid",
@@ -54,7 +53,7 @@ const Main = kind({
             border: "2px solid",
             borderColor: "green",
             backgroundColor: "#EAF0F4",
-            borderRadius: "20px",
+            borderRadius: "20px"
           }}
         >
           <div
@@ -82,12 +81,5 @@ const Main = kind({
     </div>
   )
 });
-
-// const Main = () => (
-//   <div>
-//     <Link path="/board">board</Link>
-//     <Link path="/table">table</Link>
-//   </div>
-// );
 
 export default Main;
