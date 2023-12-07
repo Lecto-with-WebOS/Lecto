@@ -1,0 +1,92 @@
+.eventContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.lectureData{
+    width: 35%; 
+    height: 30%;
+    background: linear-gradient(180deg, #FEFEFE 0%, rgba(225.48, 227.27, 227.37, 0) 100%); 
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+    border-radius: 33px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 60px;
+    font-family: Suez One;
+    font-weight: 400;
+    line-height: 31.84px;
+    letter-spacing: 0.20px;
+    word-wrap: break-word;
+}
+
+
+.lectureData img {
+    margin-top: 40px; /* 원하는 공간만큼 설정 */
+}
+
+.lectureData h3 {
+    margin-bottom: 5px; /* 원하는 공간만큼 설정 */
+}
+
+
+.weatherContainer{
+    width: 35%; 
+    height: 30%;
+    /* transform: rotate(-90deg);  */
+    transform-origin: 0 0; 
+    background: linear-gradient(180deg, #3C6FD1 0%, #3C6FD1 0%, #7CA9FF 100%); 
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 33px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather img{
+    width: 45%;
+    height: 65%;
+    margin-right: 30px;
+}
+
+.temperatures {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.timeContainer{
+    width: 25%; 
+    height: 30%;
+    background: linear-gradient(180deg, #E1E3E3 0%, rgba(225, 227, 227, 0) 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+    border-radius: 33px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 60px;
+    font-family: Suez One;
+    font-weight: 400;
+    line-height: 31.84px;
+    letter-spacing: 0.20px;
+    word-wrap: break-word;
+}
+
+.nowTime{
+    margin: 30px;
+}

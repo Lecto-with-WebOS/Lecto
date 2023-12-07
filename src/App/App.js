@@ -6,6 +6,7 @@ import Board from "../views/Board";
 import { useCallback, useEffect, useState } from "react";
 import tableData from "../tableData.json";
 import detailData from "../detailData.json";
+import DashBoard from "../views/dash-board/DashBoard";
 
 const Views = Routable({ navigate: "onNavigate" }, ({ children }) => (
   <div>{children}</div>
@@ -35,7 +36,7 @@ const App = (props) => {
     <Views {...props} path={path} onNavigate={handleNavigate}>
       <Route path="main" component={Main} />
       <Route path="table" component={Table} />
-      <Route path="board" component={Board} />
+      <Route path="board" component={DashBoard} />
     </Views>
   );
 };
