@@ -21,10 +21,19 @@ const getLectureIndex = (x) => {
   for (let i = 0; i < ranges.length; ++i)
     if (x >= ranges[i] && x <= ranges[i] + 115)
       return i;
+  return -1;
+}
+
+const getLectureStartIntTime = (x) => {
+  const ranges = [800, 900, 1030, 1200, 1330, 1500, 1630, 1800, 1930, 2100];
+
+  for (let i = 0; i < ranges.length; ++i)
+    if (x >= ranges[i] && x <= ranges[i] + 115)
+      return ranges[i];
   return 0;
 }
 
-const getLectureStartTime = (x) => {
+const getLectureStartStrTime = (x) => {
   const ranges = [800, 900, 1030, 1200, 1330, 1500, 1630, 1800, 1930, 2100];
 
   for (let i = 0; i < ranges.length; ++i)
@@ -46,25 +55,39 @@ const getLectureEndTime = (x) => {
   return 0;
 }
 
+const getProgressRatio = (time) => {
+  var sTime = getLectureStartIntTime(time);
+  var passedTime = 0;
+  if (time < sTime + 100)
+    passedTime = time - sTime;
+  else
+    passedTime = 60 + time - sTime - 100;
+  return passedTime / 75.0;
+}
+
 const Main = () => {
   const timetable = JSON.parse(window.localStorage.getItem("tableData"));
   console.log(timetable);
   var date = new Date();
   var dayOfWeek = date.getDay() - 1;
   let todayTable = timetable[dayOfWeek];
-  console.log(todayTable);
-  console.log(getCurIntegerTime(date));
 
-  // != 0 이면 수업 중. 1140는 11시 40분을 의미.
-  // test 용도
-  // var lectureIdx = getLectureIndex(1600);  
-  var lectureIdx = getLectureIndex(getCurIntegerTime(date));
+  // lectureIdx >= 0 이면 수업 중.
+  // var lectureIdx = getLectureIndex(testTime);
+  // var testTime = 1230; // 현재 시간이 12시 30분
+  var lectureIdx = getLectureIndex(getCurIntegerTime(date))
   let lectureId = todayTable[lectureIdx];
 
   const lectures = JSON.parse(window.localStorage.getItem("detailData"));
-  const lecture = lectures[lectureId];
-  const lectureName = lecture.title;
-  const professorName = lecture.professor;
+  var lecture;
+  var lectureName;
+  var professorName;
+
+  if (lectureId < 0) {
+    lecture = lectures[lectureId];
+    lectureName = lecture.title;
+    professorName = lecture.professor;
+  }
 
   return (
     <div
@@ -112,8 +135,10 @@ const Main = () => {
                 <LectureTitle text={lectureName} />
                 <IconTextPerson text={professorName + " 교수님"} />
                 <IconTextPeople text="학생 수 : (23/25)" />
-                <IconTextTime text={"수업 시간 : " + getLectureStartTime(getCurIntegerTime(date)) + " ~ " + getLectureEndTime(getCurIntegerTime(date))} />
-                <LectureProgressBar amount={0.65} start="15:00" end="17:45" />
+                <IconTextTime text={"수업 시간 : " + getLectureStartStrTime(getCurIntegerTime(date)) + " ~ " + getLectureEndTime(getCurIntegerTime(date))} />
+                <LectureProgressBar amount={0.65} start={getLectureStartStrTime(getCurIntegerTime(date))} end={getLectureEndTime(getCurIntegerTime(date))} />
+                {/* <IconTextTime text={"수업 시간 : " + getLectureStartStrTime(testTime) + " ~ " + getLectureEndTime(testTime)} />
+                <LectureProgressBar amount={getProgressRatio(testTime)} start={getLectureStartStrTime(testTime)} end={getLectureEndTime(testTime)} /> */}
               </>
             ) : (
               <div style={{ paddingTop: '200px' }}><LectureTitle text="현재 수업중인 강의가 없습니다." /></div>
