@@ -10,18 +10,14 @@ const LectureProgressBar = kind({
         display: "flex",
         flexDirection: "column",
         margin: "25px",
-        alignItems: "center",
-        border: "2px solid",
-        borderColor: "red"
+        alignItems: "center"
       }}
     >
       <ProgressBar
         progress={amount}
         style={{
           width: "100%",
-          height: "15px",
-          border: "2px solid",
-          borderColor: "green"
+          height: "15px"
         }}
       />
       <div
@@ -29,25 +25,19 @@ const LectureProgressBar = kind({
           width: "100%",
           height: "50px",
           display: "flex",
-          justifyContent: "space-between",
-          border: "2px solid",
-          borderColor: "green"
+          justifyContent: "space-between"
         }}
       >
         <span
           style={{
-            fontsize: "150px",
-            border: "2px solid",
-            borderColor: "brown"
+            fontsize: "150px"
           }}
         >
           {start}
         </span>
         <span
           style={{
-            fontsize: "150px",
-            border: "2px solid",
-            borderColor: "brown"
+            fontsize: "150px"
           }}
         >
           {end}
