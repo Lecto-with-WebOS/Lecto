@@ -15,13 +15,14 @@ const Main = kind({
   name: "MainPanel",
 
   render: () => (
+    
     <div
       style={{
         border: "2px solid",
         borderColor: "blue",
         display: "flex",
         flexDirection: "column",
-        backgroundColor: "#696969"
+        backgroundColor: "white"
       }}
     >
       <LectureSSULOGO
@@ -32,6 +33,7 @@ const Main = kind({
           borderColor: "purple"
         }}
       />
+      {/* <div style={{ zIndex: "-1",, width: "1580px", height: "744px"}}><text>123</text></div> */}
       <div
         style={{
           width: "100%",
@@ -46,11 +48,13 @@ const Main = kind({
           style={{
             display: "flex",
             justifyContent: "center",
-            width: "980px",
+            width: "1670px",
             height: "750px",
             marginLeft: "250px",
             border: "2px solid",
-            borderColor: "green"
+            borderColor: "green",
+            backgroundColor: "#EAF0F4",
+            borderRadius: "20px",
           }}
         >
           <div
