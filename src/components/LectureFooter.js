@@ -17,21 +17,19 @@ const LectureFooter = kind({
         width: "100%",
         display: "flex",
         justifyContent: "space-between",
+        alignItems: "center",
         flexDirection: "row",
         height: "220px",
-        backgroundColor: "#2B6590",
-        border: "2px solid",
-        borderColor: "purple"
+        backgroundColor: "#2B6590"
       }}
     >
       <div>
         <div
           style={{
             display: "flex",
-            width: "800px",
-            border: "2px solid",
-            borderColor: "yellow",
-            marginTop: "60px"
+            justifyContent: "space-evenly",
+            alignItems: "center",
+            width: "800px"
           }}
         >
           <img
@@ -40,17 +38,17 @@ const LectureFooter = kind({
             style={{
               width: "50px",
               height: "50px",
-              border: "2px solid",
-              borderColor: "red"
+              marginLeft: "30px"
             }}
           />
           <BodyText
             style={{
-              width: "700px",
+              width: "500px",
               fontSize: "40px",
-              textAlign: "center",
-              border: "2px solid",
-              borderColor: "green"
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              margin: "0px"
             }}
           >
             {classroom_name}
@@ -63,9 +61,7 @@ const LectureFooter = kind({
           style={{
             display: "flex",
             width: "180px",
-            height: "180px",
-            border: "2px solid",
-            borderColor: "yellow"
+            height: "180px"
           }}
         >
           <img
@@ -73,9 +69,7 @@ const LectureFooter = kind({
             alt=""
             style={{
               width: "180px",
-              height: "180px",
-              border: "2px solid",
-              borderColor: "red"
+              height: "180px"
             }}
           />
         </Link>
@@ -84,8 +78,7 @@ const LectureFooter = kind({
         style={{
           display: "flex",
           width: "800px",
-          border: "2px solid",
-          borderColor: "yellow",
+
           marginTop: "50px"
         }}
       >
@@ -94,8 +87,7 @@ const LectureFooter = kind({
             width: "50px",
             fontSize: "60px",
             textAlign: "center",
-            border: "2px solid",
-            borderColor: "green",
+
             marginLeft: "300px",
             marginTop: "40px"
           }}
@@ -108,8 +100,7 @@ const LectureFooter = kind({
           style={{
             width: "120px",
             height: "120px",
-            border: "2px solid",
-            borderColor: "red",
+
             marginLeft: "20px"
           }}
         />
@@ -128,8 +119,7 @@ const LectureFooter = kind({
               fontSize: "60px",
               fontStyle: "bold",
               textAlign: "center",
-              border: "2px solid",
-              borderColor: "green",
+
               marginLeft: "50px"
             }}
           >
@@ -140,8 +130,6 @@ const LectureFooter = kind({
               width: "60px",
               fontSize: "30px",
               textAlign: "center",
-              border: "2px solid",
-              borderColor: "green",
               marginLeft: "50px"
             }}
           >
