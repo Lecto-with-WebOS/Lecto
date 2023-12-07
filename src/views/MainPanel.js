@@ -17,8 +17,6 @@ const Main = kind({
   render: () => (
     <div
       style={{
-        border: "2px solid",
-        borderColor: "blue",
         display: "flex",
         flexDirection: "column",
         backgroundColor: "white"
@@ -27,17 +25,14 @@ const Main = kind({
       <LectureSSULOGO
         style={{
           width: "150px",
-          height: "150px",
-          border: "2px solid",
-          borderColor: "purple"
+          height: "150px"
         }}
       />
       {/* <div style={{ zIndex: "-1",, width: "1580px", height: "744px"}}><text>123</text></div> */}
       <div
         style={{
           width: "100%",
-          border: "2px solid",
-          borderColor: "purple",
+
           display: "flex",
           justifyContent: "space-between"
         }}
@@ -50,8 +45,7 @@ const Main = kind({
             width: "1670px",
             height: "750px",
             marginLeft: "250px",
-            border: "2px solid",
-            borderColor: "green",
+
             backgroundColor: "#EAF0F4",
             borderRadius: "20px"
           }}
@@ -59,8 +53,7 @@ const Main = kind({
           <div
             style={{
               width: "900px",
-              border: "2px solid",
-              borderColor: "yellow"
+              paddingTop: "80px"
             }}
           >
             <LectureTitle text="webOS 오픈소스 실전 프로젝트" />
