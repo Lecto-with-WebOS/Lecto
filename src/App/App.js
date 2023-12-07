@@ -1,39 +1,12 @@
-import kind from "@enact/core/kind";
 import ThemeDecorator from "@enact/sandstone/ThemeDecorator";
-import Panels from "@enact/sandstone/Panels";
-
 import Main from "../views/MainPanel";
 import Routable, { Route } from "@enact/ui/Routable";
-import css from "./App.module.less";
 import Table from "../views/Table";
 import Board from "../views/Board";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import tableData from "../tableData.json";
+import detailData from "../detailData.json";
 
-// const App = kind({
-//   name: "App",
-
-//   styles: {
-//     css,
-//     className: "app"
-//   },
-
-//   render: (props) => (
-//     <div {...props}>
-//       <Panels
-//         path="/app/home/settings"
-//         onSelectBreadcrumb={this.handleNavigate}
-//       >
-//         <Route path="app" component={AppPanel}>
-//           <Route path="home" component={HomePanel}>
-//             <Route path="settings" component={SettingsPanel} />
-//           </Route>
-//         </Route>
-//         <Route path="admin" component={AdminPanel} />
-//         <Route path="help" component={HelpPanel} />
-//       </Panels>
-//     </div>
-//   )
-// });
 const Views = Routable({ navigate: "onNavigate" }, ({ children }) => (
   <div>{children}</div>
 ));
@@ -43,6 +16,20 @@ const App = (props) => {
   const [path, nav] = useState("main");
   // if onNavigate is called with a new path, update the state
   const handleNavigate = useCallback((ev) => nav(ev.path), [nav]);
+  useEffect(() => {
+    try {
+      // 로컬 스토리지에 데이터 저장
+      window.localStorage.setItem("tableData", JSON.stringify(tableData.table));
+      window.localStorage.setItem(
+        "detailData",
+        JSON.stringify(detailData.detail)
+      );
+
+      console.log("JSON 데이터가 로컬 스토리지에 등록되었습니다.");
+    } catch (error) {
+      console.error("LocalStorage Error", error);
+    }
+  }, []);
 
   return (
     <Views {...props} path={path} onNavigate={handleNavigate}>
