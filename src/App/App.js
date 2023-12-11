@@ -2,11 +2,11 @@ import ThemeDecorator from "@enact/sandstone/ThemeDecorator";
 import Main from "../views/MainPanel";
 import Routable, { Route } from "@enact/ui/Routable";
 import Table from "../views/Table";
-import Board from "../views/Board";
+
 import { useCallback, useEffect, useState } from "react";
 import tableData from "../tableData.json";
 import detailData from "../detailData.json";
-import DashBoard from "../views/dash-board/DashBoard";
+import DashBoard from "../views/DashBoard";
 
 const Views = Routable({ navigate: "onNavigate" }, ({ children }) => (
   <div>{children}</div>

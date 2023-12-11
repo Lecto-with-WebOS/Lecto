@@ -1,7 +1,7 @@
 import styles from "./DashBoard.module.css";
-import Header from "../../components/dash-board/Header";
-import InfomationContainer from "../../components/dash-board/InfomationContainer";
-import ssu_charactor from "../../asset/ssu_character.png";
+import Header from "../components/dash-board/Header";
+import InfomationContainer from "../components/dash-board/InfomationContainer";
+import ssu_charactor from "../asset/ssu_character.png";
 
 const DashBoard = () => {
   return (
