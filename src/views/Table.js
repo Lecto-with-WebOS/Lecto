@@ -28,6 +28,7 @@ const Table = () => {
     ];
     return scheduleTimes[index];
   };
+
   return (
     <div className={styles.container}>
       <div className={styles.table}>
