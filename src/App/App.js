@@ -2,7 +2,6 @@ import ThemeDecorator from "@enact/sandstone/ThemeDecorator";
 import Main from "../views/MainPanel";
 import Routable, { Route } from "@enact/ui/Routable";
 import Table from "../views/Table";
-
 import { useCallback, useEffect, useState } from "react";
 import tableData from "../tableData.json";
 import detailData from "../detailData.json";

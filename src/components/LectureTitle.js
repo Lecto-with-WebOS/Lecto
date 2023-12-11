@@ -5,7 +5,7 @@ const LectureTitle = kind({
   name: "LectureTitle",
 
   render: ({ text }) => (
-    <Heading size="large" spacing="small" alignment="center">
+    <Heading style={{ fontSize: '60px' }} size="large" spacing="small" alignment="center">
       {text}
     </Heading>
   )
