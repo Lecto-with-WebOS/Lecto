@@ -57,7 +57,7 @@ const LectureFooter = kind({
       </div>
       <div>
         <Link
-          path="/board"
+          path="/table"
           style={{
             display: "flex",
             width: "180px",
