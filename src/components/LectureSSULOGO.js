@@ -1,5 +1,6 @@
 import kind from "@enact/core/kind";
 import Logo from "../asset/images/lecture_ssu_logo.svg";
+import { Link } from "@enact/ui/Routable";
 
 const LectureSSULOGO = kind({
   name: "LectureSSULOGO",
@@ -10,10 +11,13 @@ const LectureSSULOGO = kind({
         width: "100px",
         height: "100px",
         display: "flex",
-        alignItems: "center"
+        alignItems: "center",
+        zIndex: "99"
       }}
     >
-      <img src={Logo} alt="" />
+      <Link path="/board">
+        <img src={Logo} alt="" />
+      </Link>
     </div>
   )
 });
