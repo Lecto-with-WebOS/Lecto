@@ -11,6 +11,9 @@ import LectureStudyingHorse from "../components/LectureStudyingHorse";
 import LectureSSULOGO from "../components/LectureSSULOGO";
 import LectureFooter from "../components/LectureFooter";
 
+import timetable from '../tableData.json'
+import lectures from '../detailData.json'
+
 const getCurIntegerTime = (date) => {
   return (parseInt(date.getHours()) * 100 + parseInt(date.getMinutes()));
 }
@@ -66,25 +69,29 @@ const getProgressRatio = (time) => {
 }
 
 const Main = () => {
-  const timetable = JSON.parse(window.localStorage.getItem("tableData"));
-  console.log(timetable);
+  // const timetable = JSON.parse(window.localStorage.getItem("tableData"));
+  console.log("timetable : " , timetable);
+  console.log("timetable[detail] : ", timetable.table);
   var date = new Date();
   var dayOfWeek = date.getDay() - 1;
-  let todayTable = timetable[dayOfWeek];
+  let todayTable = timetable.table[dayOfWeek];
+  console.log("todayTable : ", todayTable);
 
   // lectureIdx >= 0 이면 수업 중.
   // var lectureIdx = getLectureIndex(testTime);
   // var testTime = 1230; // 현재 시간이 12시 30분
-  var lectureIdx = getLectureIndex(getCurIntegerTime(date))
+  var lectureIdx = getLectureIndex(getCurIntegerTime(date));
+  console.log("lectureIdx : ", lectureIdx);
   let lectureId = todayTable[lectureIdx];
+  console.log("lectureId : ", lectureId);
+  console.log("lectures : ", lectures.detail);
 
-  const lectures = JSON.parse(window.localStorage.getItem("detailData"));
   var lecture;
   var lectureName;
   var professorName;
 
-  if (lectureId < 0) {
-    lecture = lectures[lectureId];
+  if (lectureId > 0) {
+    lecture = lectures.detail[lectureId];
     lectureName = lecture.title;
     professorName = lecture.professor;
   }
@@ -136,7 +143,7 @@ const Main = () => {
                 <IconTextPerson text={professorName + " 교수님"} />
                 <IconTextPeople text="학생 수 : (23/25)" />
                 <IconTextTime text={"수업 시간 : " + getLectureStartStrTime(getCurIntegerTime(date)) + " ~ " + getLectureEndTime(getCurIntegerTime(date))} />
-                <LectureProgressBar amount={0.65} start={getLectureStartStrTime(getCurIntegerTime(date))} end={getLectureEndTime(getCurIntegerTime(date))} />
+                <LectureProgressBar amount={getProgressRatio(getCurIntegerTime(date))} start={getLectureStartStrTime(getCurIntegerTime(date))} end={getLectureEndTime(getCurIntegerTime(date))} />
                 {/* <IconTextTime text={"수업 시간 : " + getLectureStartStrTime(testTime) + " ~ " + getLectureEndTime(testTime)} />
                 <LectureProgressBar amount={getProgressRatio(testTime)} start={getLectureStartStrTime(testTime)} end={getLectureEndTime(testTime)} /> */}
               </>
