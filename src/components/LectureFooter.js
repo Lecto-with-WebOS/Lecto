@@ -135,6 +135,7 @@ const LectureFooter = kind({
           >
             {yyyy_mm_dd}
           </BodyText>
+          <Link path="/board">.</Link>
         </div>
       </div>
     </div>
